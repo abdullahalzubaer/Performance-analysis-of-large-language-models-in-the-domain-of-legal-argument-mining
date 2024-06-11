@@ -53,7 +53,7 @@ Follow these steps to get your development environment running:
 
 ### Dataset Extraction
 
-1. Please download the dataset `ECHR_Corpus.json` and place it in the `./data/original` folder. The dataset can be downloaded from [http://www.di.uevora.pt/~pq/echr/](http://www.di.uevora.pt/~pq/echr/). 
+1. Please download the dataset and place it in the `./data/original` folder. We only need `ECHR_Corpus.json`. The dataset can be downloaded from [http://www.di.uevora.pt/~pq/echr/](http://www.di.uevora.pt/~pq/echr/). 
 
 2. Extract the dataset using the following command. This will extract the json file from the dataset and save it in the `./data/experiment_data/` folder as pickle files.
 
