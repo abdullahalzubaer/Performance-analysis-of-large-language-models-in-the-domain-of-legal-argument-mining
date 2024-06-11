@@ -176,7 +176,7 @@ And cite the following paper for the original ECHR corpus:
     with open(path_to_df_decomposed, 'rb') as f:
         df_conclusion_or_premise = pickle.load(f)
     
-    df_conclusion_or_premise = df_conclusion_or_premise[:200].copy() # for testing purposes reduce the size of the dataset
+    # df_conclusion_or_premise = df_conclusion_or_premise[:200].copy() # for testing purposes reduce the size of the dataset
     
     
     df_conclusion_or_premise['article'] = df_conclusion_or_premise['article'].astype('category')
