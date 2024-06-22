@@ -39,15 +39,6 @@ And cite the following paper for the original ECHR corpus:
 
                                   
 """, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('-e', '--embedding_model',
-                        type=str, required=True,
-                        choices=['multi-qa-mpnet-base-dot-v1', 'text-embedding-ada-002', 'none'],
-                        help='''Model identifier for the sentence transformer or OpenAI embedding model.
-                        Choose from:
-                        - multi-qa-mpnet-base-dot-v1: A sentence transformer model.
-                        - text-embedding-ada-002: An OpenAI embedding model.
-                        - none: Must be used when --mode is set to 'random' or --prompt_type is 'zeroshot_with_instruction'.
-                        ''')
     
     parser.add_argument('-m','--model_name',
                         type=str, required=True,
@@ -58,18 +49,13 @@ And cite the following paper for the original ECHR corpus:
                         - gpt-4: GPT-4 model.
                         ''')
     
-    parser.add_argument('-pt','--prompt_type',
+    parser.add_argument('-e', '--embedding_model',
                         type=str, required=True,
-                        choices=['zeroshot_with_instruction', 'twoshot_with_instruction', 
-                                 'fourshot_with_instruction', 'eightshot_with_instruction'],
-                        help='''Type of prompt to use for the model.
+                        choices=['multi-qa-mpnet-base-dot-v1', 'text-embedding-ada-002', 'none'],
+                        help='''Model identifier for the sentence transformer or OpenAI embedding model.
                         Choose from:
-                        - zeroshot_with_instruction: No examples are given, only instructions.
-                          --embedding_model must be 'none' if this is selected.
-                          --mode must be 'none' if this is selected.
-                        - twoshot_with_instruction: Two examples are given with instructions.
-                        - fourshot_with_instruction: Four examples are given with instructions.
-                        - eightshot_with_instruction: Eight examples are given with instructions.
+                        - multi-qa-mpnet-base-dot-v1: A sentence transformer model.
+                        - text-embedding-ada-002: An OpenAI embedding model.
                         ''')
     
     parser.add_argument('-mode', '--mode',
@@ -80,10 +66,21 @@ And cite the following paper for the original ECHR corpus:
                         - similar: Sentences semantically similar to the input.
                         - dissimilar: Sentences semantically dissimilar to the input.
                         - random: Randomly selected sentences.
-                          --embedding_model must be 'none' if this is selected.
-                        - none: No additional sentences are added.
-                          Must be used if --prompt_type is 'zeroshot_with_instruction'.
                         ''')
+    
+    parser.add_argument('-pt','--prompt_type',
+                        type=str, required=True,
+                        choices=['zeroshot_with_instruction', 'twoshot_with_instruction', 
+                                 'fourshot_with_instruction', 'eightshot_with_instruction'],
+                        help='''Type of prompt to use for the model.
+                        Choose from:
+                        - zeroshot_with_instruction: No examples are given, only instructions.
+                        - twoshot_with_instruction: Two examples are given with instructions.
+                        - fourshot_with_instruction: Four examples are given with instructions.
+                        - eightshot_with_instruction: Eight examples are given with instructions.
+                        ''')
+    
+
     
     parser.add_argument('-c', '--component_to_classify',
                         type=str, required=True,
