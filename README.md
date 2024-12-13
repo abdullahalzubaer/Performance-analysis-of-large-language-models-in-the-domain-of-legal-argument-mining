@@ -98,6 +98,7 @@ If you use our code and paper, please cite our paper as follows:
 
 [![DOI](https://zenodo.org/badge/DOI/10.3389/frai.2023.1278796.svg)](https://doi.org/10.3389/frai.2023.1278796)
 
+[You can click the link here for the BibTex](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2023.1278796/bibTex) or copy the text below.
 
 ```bibtex
 @ARTICLE{10.3389/frai.2023.1278796,
