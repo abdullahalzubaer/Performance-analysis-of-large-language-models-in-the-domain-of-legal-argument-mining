@@ -4,4 +4,4 @@ pandas==1.5.3
 scikit_learn==1.5.0
 sentence_transformers==3.0.1
 tenacity==8.0.1
-torch==2.12.0
+torch==2.13.0
